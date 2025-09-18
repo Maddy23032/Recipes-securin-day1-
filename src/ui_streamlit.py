@@ -2,11 +2,6 @@ import os
 import json
 import requests
 import streamlit as st
-from typing import Any, Dict, List, Optional
-import os
-import json
-import requests
-import streamlit as st
 
 API = os.environ.get("RECIPES_API_BASE", "http://127.0.0.1:8000")
 st.set_page_config(page_title="Recipes", layout="wide")
@@ -166,4 +161,3 @@ with R:
             st.table({"Nutrient": list(m.keys()), "Value": list(m.values())})
 
 st.caption("API: " + API)
-            # Title as a button to open details

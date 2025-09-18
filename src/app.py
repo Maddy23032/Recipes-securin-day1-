@@ -132,9 +132,6 @@ def search_recipes(
 
 @app.get("/api/cuisines")
 def list_cuisines(q: str | None = Query(None), limit: int = Query(200)):
-    """Return distinct cuisines with counts, optionally filtered by a substring.
-    Ordered by count desc. Useful for UI dropdowns.
-    """
     l = to_i(limit) or 200
     if l < 1:
         l = 1
@@ -158,9 +155,6 @@ def list_cuisines(q: str | None = Query(None), limit: int = Query(200)):
 
 @app.get("/api/titles")
 def list_titles(q: str | None = Query(None), limit: int = Query(200)):
-    """Return distinct titles, optionally filtered by a substring.
-    Ordered by popularity (count desc) as a proxy.
-    """
     l = to_i(limit) or 200
     if l < 1:
         l = 1
